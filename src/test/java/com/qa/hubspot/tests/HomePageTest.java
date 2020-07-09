@@ -4,9 +4,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -16,16 +14,17 @@ import com.qa.hubspot.page.LoginPage;
 import com.qa.hubspot.util.AppConstants;
 import com.qa.hubspot.util.Credentials;
 
-public class LoginPageTest {
+public class HomePageTest {
 	
 	WebDriver driver;
 	BasePage basePage;
 	Properties prop;
 	LoginPage loginPage;
+	HomePage homePage;
 	Credentials userCred;
 	
 	@BeforeTest
-	public void setUp() {
+	public void setUp() throws InterruptedException {
 		basePage = new BasePage();
 		prop = basePage.init_properites();
 		String browserName = prop.getProperty("browser");
@@ -33,34 +32,34 @@ public class LoginPageTest {
 		driver.get(prop.getProperty("url"));
 		loginPage = new LoginPage(driver);
 		userCred = new Credentials(prop.getProperty("username"), prop.getProperty("password"));
-	}
-	
-	@Test(priority=1, description="get title as HubSpot Login")
-	public void verifyPageTitleTest() throws InterruptedException {
+		homePage = loginPage.doLogin(userCred);
 		Thread.sleep(5000);
-		String title = loginPage.getPageTitle();
-		System.out.println("login page title "+ title);
-		Assert.assertEquals(title, AppConstants.LOGIN_HOME_PAGE_TITLE);
 	}
 	
-	@Test(priority=2, description="verify signup lin in Login page")
-	public void verifySignUpLink() {
-		Assert.assertTrue(loginPage.checkSignUpLink());
+	@Test(priority=1)
+	public void verifyHomePageTitle() {
+		String title = homePage.getHomePageTitle();
+		System.out.println("home page title is: "+ title);
+		Assert.assertEquals(title, AppConstants.HOME_PAGE_TITLE);
 	}
 	
-	@Test(priority=3, description="login page wrong credentials")
-	public void loginTest() {
-		HomePage homePage = loginPage.doLogin(userCred);
+	@Test(priority=2)
+	public void verifyHomePageHeaderTest() {
+		String header = homePage.getHomePageHeader();
+		System.out.println("home page header is: "+ header);
+		Assert.assertEquals(header, AppConstants.HOME_PAGE_HEADER);
+	}
+	
+	@Test(priority=3)
+	public void verifyLoggedInUserTest() {
 		String accountName = homePage.getLoggedInUserAccount();
-		System.out.println("logged in account name: "+ accountName);
+		System.out.println("logged in user account name is: "+ accountName);
 		Assert.assertEquals(accountName, prop.getProperty("accountname"));
-		
 	}
 	
 	@AfterTest
 	public void tearDown() {
 		driver.quit();
 	}
-	
 
 }

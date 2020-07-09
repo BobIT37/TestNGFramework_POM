@@ -3,9 +3,13 @@ package com.qa.hubspot.page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.qa.hubspot.util.Credentials;
+import com.qa.hubspot.util.ElementUtil;
+
 public class LoginPage {
 
 	WebDriver driver;
+	ElementUtil elementUtil;
 	
 	//1. locators
 	By emailId = By.id("username");
@@ -16,21 +20,28 @@ public class LoginPage {
 	//Constructor
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
+		elementUtil = new ElementUtil(driver);
 	}
 	
 	//Page actions
 	public String getPageTitle() {
-		return driver.getTitle();
+		return elementUtil.doGetPageTitle();
 	}
 	
 	public boolean checkSignUpLink() {
-		return driver.findElement(signUpLink).isDisplayed();
+		return elementUtil.doIsDisplayed(signUpLink);
 	}
 	
-	public void doLogin(String username, String pwd) {
-		driver.findElement(emailId).sendKeys(username);
-		driver.findElement(password).sendKeys(pwd);
-		driver.findElement(loginButton).click();
+	public HomePage doLogin(Credentials userCred) {
+		elementUtil.doSendKeys(emailId, userCred.getAppUsername());
+		elementUtil.doSendKeys(password, userCred.getAppPassword());
+		elementUtil.doClick(loginButton);
+		
+//		driver.findElement(emailId).sendKeys(username);
+//		driver.findElement(password).sendKeys(pwd);
+//		driver.findElement(loginButton).click();
+		
+		return new HomePage(driver);
 	}
 	
 	

@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9924" started-at="2020-07-07T00:13:23 EDT" finished-at="2020-07-07T00:13:33 EDT">
+  <suite name="Default suite" duration-ms="12170" started-at="2020-07-09T05:52:45 EDT" finished-at="2020-07-09T05:52:57 EDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9924" started-at="2020-07-07T00:13:23 EDT" finished-at="2020-07-07T00:13:33 EDT">
-      <class name="com.qa.hubspot.tests.LoginPageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@68bbe345]" name="setUp" is-config="true" duration-ms="1802" started-at="2020-07-07T00:13:23 EDT" finished-at="2020-07-07T00:13:25 EDT">
+    <test name="Default test" duration-ms="12170" started-at="2020-07-09T05:52:45 EDT" finished-at="2020-07-09T05:52:57 EDT">
+      <class name="com.qa.hubspot.tests.HomePageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.HomePageTest@1f554b06]" name="setUp" is-config="true" duration-ms="11969" started-at="2020-07-09T05:52:45 EDT" finished-at="2020-07-09T05:52:57 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyPageTitleTest()[pri:1, instance:com.qa.hubspot.tests.LoginPageTest@68bbe345]" name="verifyPageTitleTest" duration-ms="5545" started-at="2020-07-07T00:13:25 EDT" description="get title as HubSpot Login" finished-at="2020-07-07T00:13:30 EDT">
+        <test-method status="PASS" signature="verifyHomePageTitle()[pri:1, instance:com.qa.hubspot.tests.HomePageTest@1f554b06]" name="verifyHomePageTitle" duration-ms="11" started-at="2020-07-09T05:52:57 EDT" finished-at="2020-07-09T05:52:57 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyPageTitleTest -->
-        <test-method status="PASS" signature="verifySignUpLink()[pri:2, instance:com.qa.hubspot.tests.LoginPageTest@68bbe345]" name="verifySignUpLink" duration-ms="51" started-at="2020-07-07T00:13:30 EDT" description="verify signup lin in Login page" finished-at="2020-07-07T00:13:30 EDT">
+        </test-method> <!-- verifyHomePageTitle -->
+        <test-method status="PASS" signature="verifyHomePageHeaderTest()[pri:2, instance:com.qa.hubspot.tests.HomePageTest@1f554b06]" name="verifyHomePageHeaderTest" duration-ms="23" started-at="2020-07-09T05:52:57 EDT" finished-at="2020-07-09T05:52:57 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySignUpLink -->
-        <test-method status="PASS" signature="loginTest()[pri:3, instance:com.qa.hubspot.tests.LoginPageTest@68bbe345]" name="loginTest" duration-ms="2401" started-at="2020-07-07T00:13:30 EDT" description="login page wrong credentials" finished-at="2020-07-07T00:13:33 EDT">
+        </test-method> <!-- verifyHomePageHeaderTest -->
+        <test-method status="PASS" signature="verifyLoggedInUserTest()[pri:3, instance:com.qa.hubspot.tests.HomePageTest@1f554b06]" name="verifyLoggedInUserTest" duration-ms="21" started-at="2020-07-09T05:52:57 EDT" finished-at="2020-07-09T05:52:57 EDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@68bbe345]" name="tearDown" is-config="true" duration-ms="96" started-at="2020-07-07T00:13:33 EDT" finished-at="2020-07-07T00:13:33 EDT">
+        </test-method> <!-- verifyLoggedInUserTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.HomePageTest@1f554b06]" name="tearDown" is-config="true" duration-ms="118" started-at="2020-07-09T05:52:57 EDT" finished-at="2020-07-09T05:52:57 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.qa.hubspot.tests.LoginPageTest -->
+      </class> <!-- com.qa.hubspot.tests.HomePageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
