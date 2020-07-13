@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.qa.hubspot.base.BasePage;
+import com.qa.hubspot.util.AppConstants;
 import com.qa.hubspot.util.ElementUtil;
 
 public class HomePage extends BasePage{
@@ -20,6 +21,7 @@ public class HomePage extends BasePage{
 	}
 	
 	public String getHomePageTitle() {
+		elementUtil.waitForTitlePresent(AppConstants.HOME_PAGE_TITLE);
 		return elementUtil.doGetPageTitle();
 	}
 	

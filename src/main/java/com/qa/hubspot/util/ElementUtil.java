@@ -1,8 +1,14 @@
 package com.qa.hubspot.util;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.qa.hubspot.base.BasePage;
 
 /**
  * 
@@ -10,13 +16,51 @@ import org.openqa.selenium.WebElement;
  *
  */
 
-public class ElementUtil {
+public class ElementUtil extends BasePage{
 	
 	WebDriver driver;
+	WebDriverWait wait;
+	JavaScriptUtil javaScriptUtil;
+	Properties prop;
+	
 	
 	public ElementUtil(WebDriver driver) {
 		this.driver = driver;
+		wait = new WebDriverWait(driver, AppConstants.DEFAULT_TIMEOUT);
+		javaScriptUtil = new JavaScriptUtil(driver);
 	}
+	
+	/**
+	 * Wait for title
+	 * @param title
+	 * @return
+	 */
+	public boolean waitForTitlePresent(String title) {
+		wait.until(ExpectedConditions.titleIs(title));
+		return true;
+	}
+	
+	/**
+	 * An expectation for checking that an element is present on the DOM of a page.
+	 * @param locator
+	 * @return
+	 */
+	public boolean waitForElementPresent(By locator) {
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		return true;
+	}
+	
+	/**
+	 * An expectation for checking that an element is present on the DOM of a page and visible
+	 * @param locator
+	 * @return
+	 */
+	public boolean waitForElementVisible(By locator) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		return true;
+	}
+	
+	
 	
 	/**
 	 * Get title
@@ -42,7 +86,11 @@ public class ElementUtil {
 		WebElement element = null;
 		
 		try {
+			//if(waitForElementPresent(locator));
 			element = driver.findElement(locator);
+			if(highlightElement) {
+				javaScriptUtil.flash(element);
+			}
 		} catch (Exception e) {
 			System.out.println("some exception got occured while creating the web element");
 		}
@@ -73,6 +121,7 @@ public class ElementUtil {
 			WebElement element = getElement(locator);
 			element.clear();
 			element.sendKeys(value);
+			
 		} catch (Exception e) {
 			System.out.println("some exception got occured while entering values in a field");
 		}

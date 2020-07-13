@@ -8,6 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.hubspot.base.BasePage;
@@ -35,26 +36,46 @@ public class LoginPageTest {
 		userCred = new Credentials(prop.getProperty("username"), prop.getProperty("password"));
 	}
 	
-	@Test(priority=1, description="get title as HubSpot Login")
+	@Test(priority=1, description="get title as HubSpot Login", enabled = true)
 	public void verifyPageTitleTest() throws InterruptedException {
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		String title = loginPage.getPageTitle();
 		System.out.println("login page title "+ title);
 		Assert.assertEquals(title, AppConstants.LOGIN_HOME_PAGE_TITLE);
 	}
 	
-	@Test(priority=2, description="verify signup lin in Login page")
+	@Test(priority=2, description="verify signup lin in Login page", enabled=true)
 	public void verifySignUpLink() {
 		Assert.assertTrue(loginPage.checkSignUpLink());
 	}
 	
-	@Test(priority=3, description="login page wrong credentials")
+	@Test(priority=3, description="login page wrong credentials", enabled=true)
 	public void loginTest() {
 		HomePage homePage = loginPage.doLogin(userCred);
 		String accountName = homePage.getLoggedInUserAccount();
 		System.out.println("logged in account name: "+ accountName);
 		Assert.assertEquals(accountName, prop.getProperty("accountname"));
 		
+	}
+	
+	@DataProvider
+	public Object[][] getLoginInvalidData() {
+		
+		Object data[][] = {{"bill@gmail.com", "test12345"},
+				           {"jimy@gmail.com", " "},
+				           {" ", "test1234"},
+				           {"yummy", "yummy"},
+				           {" ", " "}};
+		return data;
+	}
+	
+	@Test(priority=4, dataProvider= "getLoginInvalidData", enabled=false)
+	public void login_invalidTestCase(String username, String pwd) {
+		
+		userCred.setAppUsername(username);
+		userCred.setAppPassword(pwd);
+		loginPage.doLogin(userCred);
+		Assert.assertTrue(loginPage.checkLoginErrorMessage());
 	}
 	
 	@AfterTest
