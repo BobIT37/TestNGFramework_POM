@@ -15,6 +15,9 @@ public class HomePage extends BasePage{
 	By header = By.cssSelector("h1.dashboard-selector__title");
 	By accountName = By.cssSelector("span.account-name ");
 	
+	By mainContactsLink = By.id("nav-primary-contacts-branch");
+	By childContactsLink = By.id("nav-secondary-contacts");
+	
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		elementUtil = new ElementUtil(driver);
@@ -31,6 +34,20 @@ public class HomePage extends BasePage{
 	
 	public String getLoggedInUserAccount() {
 		return elementUtil.doGetText(accountName);
+	}
+	
+	public void clickOnContacts() {
+		elementUtil.waitForElementPresent(mainContactsLink);
+		elementUtil.doClick(mainContactsLink);
+		
+		elementUtil.waitForElementPresent(childContactsLink);
+		elementUtil.doClick(childContactsLink);
+		
+	}
+
+	public ContactsPage goToContactsPage() {
+		clickOnContacts();
+		return new ContactsPage(driver);
 	}
 	
 
