@@ -16,7 +16,7 @@ public class LoginPage {
 	By emailId = By.id("username");
 	By password = By.id("password");
 	By loginButton = By.id("loginBtn");
-	By signUpLink = By.linkText("Sign up");
+	By signUpLink = By.linkText("Sign up76");
 	By loginErrorText = By.cssSelector("div.private-alert__inner");
 	
 	//Constructor

@@ -5,27 +5,24 @@
 <listeners>
 	
 	
-    <listener class-name="com.qa.hubspot.listeners.ExtentReportListener" />
-    <listener class-name="com.qa.hubspot.listeners.pdfListener" />
-    
-    
-   <!-- <listener class-name="com.qa.hubspot.listeners.ExtentReportListener" />
-     -->   
-
-	<!-- <listener class-name="com.qa.hubspot.listeners.TesultsListener" />
-	<listener class-name="com.qa.hubspot.listeners.ExtentReportListener" />
-	<listener class-name="com.qa.hubspot.listeners.TestAllureListener" /> -->
-
-	<!-- <listener class-name="com.qa.hubspot.listeners.ScreenshotListener" /> -->
-
-
+	<listener class-name="com.qa.hubspot.listeners.ScreenshotListener" />
+	<!-- <listener class-name="com.qa.hubspot.listeners.TestAllureListener" /> -->
+    <!-- <listener class-name="com.qa.hubspot.listeners.ExtentReportListener" /> -->
 
 	</listeners>
   <parameter name="browser" value="chrome"/>
   <test name="HubSpot Functional Regression Test">
+  
+   <!-- <groups>
+   <run>
+      <include name="sanity"/>
+   </run>
+   </groups> -->
+   
     <classes>
       <class name="com.qa.hubspot.tests.LoginPageTest"/>
-      <class name="com.qa.hubspot.tests.HomePageTest"/>
+     <!--  <class name="com.qa.hubspot.tests.HomePageTest"/>
+      <class name="com.qa.hubspot.tests.ContactsPageTest"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

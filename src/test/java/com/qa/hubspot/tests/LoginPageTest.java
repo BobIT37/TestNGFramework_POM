@@ -17,6 +17,14 @@ import com.qa.hubspot.page.LoginPage;
 import com.qa.hubspot.util.AppConstants;
 import com.qa.hubspot.util.Credentials;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+
+@Epic("Epic - 101 : create login features")
+@Feature("US - 501 : Create test for login on HubSpot")
 public class LoginPageTest {
 	
 	WebDriver driver;
@@ -25,7 +33,7 @@ public class LoginPageTest {
 	LoginPage loginPage;
 	Credentials userCred;
 	
-	@BeforeTest
+	@BeforeMethod(alwaysRun= true)
 	public void setUp() {
 		basePage = new BasePage();
 		prop = basePage.init_properites();
@@ -36,7 +44,9 @@ public class LoginPageTest {
 		userCred = new Credentials(prop.getProperty("username"), prop.getProperty("password"));
 	}
 	
-	@Test(priority=1, description="get title as HubSpot Login", enabled = true)
+	@Test(priority=1,  groups = "sanity", description="get title as HubSpot Login", enabled = true)
+	@Description("Verify Login Page title")
+	@Severity(SeverityLevel.NORMAL)
 	public void verifyPageTitleTest() throws InterruptedException {
 		//Thread.sleep(5000);
 		String title = loginPage.getPageTitle();
@@ -45,11 +55,15 @@ public class LoginPageTest {
 	}
 	
 	@Test(priority=2, description="verify signup lin in Login page", enabled=true)
+	@Description("Verify signup link")
+	@Severity(SeverityLevel.NORMAL)
 	public void verifySignUpLink() {
 		Assert.assertTrue(loginPage.checkSignUpLink());
 	}
 	
 	@Test(priority=3, description="login page wrong credentials", enabled=true)
+	@Description("Verify Login Page credentials")
+	@Severity(SeverityLevel.CRITICAL)
 	public void loginTest() {
 		HomePage homePage = loginPage.doLogin(userCred);
 		String accountName = homePage.getLoggedInUserAccount();
@@ -78,7 +92,7 @@ public class LoginPageTest {
 		Assert.assertTrue(loginPage.checkLoginErrorMessage());
 	}
 	
-	@AfterTest
+	@AfterMethod (alwaysRun = true)
 	public void tearDown() {
 		driver.quit();
 	}

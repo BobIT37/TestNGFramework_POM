@@ -1,55 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="7" passed="6">
+<testng-results skipped="0" failed="2" ignored="1" total="4" passed="1">
   <reporter-output>
+    <line>
+      <![CDATA[<a href='/Users/bobit/Documents/workspace/TestNGPOM/target/surefire-reports/failure_screenshots/verifySignUpLink_20_07_2020_11_43_08.png'> <img src='/Users/bobit/Documents/workspace/TestNGPOM/target/surefire-reports/failure_screenshots/verifySignUpLink_20_07_2020_11_43_08.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[<a href='/Users/bobit/Documents/workspace/TestNGPOM/target/surefire-reports/failure_screenshots/loginTest_20_07_2020_11_43_10.png'> <img src='/Users/bobit/Documents/workspace/TestNGPOM/target/surefire-reports/failure_screenshots/loginTest_20_07_2020_11_43_10.png' height='100' width='100'/> </a>]]>
+    </line>
   </reporter-output>
-  <suite name="HubSpot Regression Test Suite" duration-ms="29950" started-at="2020-07-16T00:56:47 EDT" finished-at="2020-07-16T00:57:17 EDT">
+  <suite name="HubSpot Regression Test Suite" duration-ms="10761" started-at="2020-07-20T23:43:00 EDT" finished-at="2020-07-20T23:43:10 EDT">
     <groups>
+      <group name="sanity">
+        <method signature="LoginPageTest.verifyPageTitleTest()[pri:1, instance:com.qa.hubspot.tests.LoginPageTest@a77614d]" name="verifyPageTitleTest" class="com.qa.hubspot.tests.LoginPageTest"/>
+      </group> <!-- sanity -->
     </groups>
-    <test name="HubSpot Functional Regression Test" duration-ms="29950" started-at="2020-07-16T00:56:47 EDT" finished-at="2020-07-16T00:57:17 EDT">
+    <test name="HubSpot Functional Regression Test" duration-ms="10761" started-at="2020-07-20T23:43:00 EDT" finished-at="2020-07-20T23:43:10 EDT">
       <class name="com.qa.hubspot.tests.LoginPageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@3d36e4cd]" name="setUp" is-config="true" duration-ms="1402" started-at="2020-07-16T00:57:04 EDT" finished-at="2020-07-16T00:57:05 EDT">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@a77614d]" name="setUp" is-config="true" duration-ms="2199" started-at="2020-07-20T23:43:00 EDT" finished-at="2020-07-20T23:43:02 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyPageTitleTest()[pri:1, instance:com.qa.hubspot.tests.LoginPageTest@3d36e4cd]" name="verifyPageTitleTest" duration-ms="4617" started-at="2020-07-16T00:57:05 EDT" description="get title as HubSpot Login" finished-at="2020-07-16T00:57:10 EDT">
+        <test-method status="PASS" signature="verifyPageTitleTest()[pri:1, instance:com.qa.hubspot.tests.LoginPageTest@a77614d]" name="verifyPageTitleTest" duration-ms="4617" started-at="2020-07-20T23:43:02 EDT" description="get title as HubSpot Login" finished-at="2020-07-20T23:43:07 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPageTitleTest -->
-        <test-method status="PASS" signature="verifySignUpLink()[pri:2, instance:com.qa.hubspot.tests.LoginPageTest@3d36e4cd]" name="verifySignUpLink" duration-ms="630" started-at="2020-07-16T00:57:10 EDT" description="verify signup lin in Login page" finished-at="2020-07-16T00:57:11 EDT">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@a77614d]" name="tearDown" is-config="true" duration-ms="103" started-at="2020-07-20T23:43:07 EDT" finished-at="2020-07-20T23:43:07 EDT">
           <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@a77614d]" name="setUp" is-config="true" duration-ms="1158" started-at="2020-07-20T23:43:07 EDT" finished-at="2020-07-20T23:43:08 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="verifySignUpLink()[pri:2, instance:com.qa.hubspot.tests.LoginPageTest@a77614d]" name="verifySignUpLink" duration-ms="33" started-at="2020-07-20T23:43:08 EDT" description="verify signup lin in Login page" finished-at="2020-07-20T23:43:08 EDT">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.failNotEquals(Assert.java:968)
+at org.testng.Assert.assertTrue(Assert.java:43)
+at org.testng.Assert.assertTrue(Assert.java:53)
+at com.qa.hubspot.tests.LoginPageTest.verifySignUpLink(LoginPageTest.java:61)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:767)
+at org.testng.TestRunner.run(TestRunner.java:588)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1214)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1136)
+at org.testng.TestNG.runSuites(TestNG.java:1066)
+at org.testng.TestNG.run(TestNG.java:1034)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<a href='/Users/bobit/Documents/workspace/TestNGPOM/target/surefire-reports/failure_screenshots/verifySignUpLink_20_07_2020_11_43_08.png'> <img src='/Users/bobit/Documents/workspace/TestNGPOM/target/surefire-reports/failure_screenshots/verifySignUpLink_20_07_2020_11_43_08.png' height='100' width='100'/> </a>]]>
+            </line>
           </reporter-output>
         </test-method> <!-- verifySignUpLink -->
-        <test-method status="PASS" signature="loginTest()[pri:3, instance:com.qa.hubspot.tests.LoginPageTest@3d36e4cd]" name="loginTest" duration-ms="4766" started-at="2020-07-16T00:57:11 EDT" description="login page wrong credentials" finished-at="2020-07-16T00:57:15 EDT">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@a77614d]" name="tearDown" is-config="true" duration-ms="77" started-at="2020-07-20T23:43:09 EDT" finished-at="2020-07-20T23:43:09 EDT">
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@a77614d]" name="setUp" is-config="true" duration-ms="1121" started-at="2020-07-20T23:43:09 EDT" finished-at="2020-07-20T23:43:10 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="loginTest()[pri:3, instance:com.qa.hubspot.tests.LoginPageTest@a77614d]" name="loginTest" duration-ms="59" started-at="2020-07-20T23:43:10 EDT" description="login page wrong credentials" finished-at="2020-07-20T23:43:10 EDT">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [sanane] but found [null]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [sanane] but found [null]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.failNotEquals(Assert.java:968)
+at org.testng.Assert.assertEqualsImpl(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at org.testng.Assert.assertEquals(Assert.java:585)
+at com.qa.hubspot.tests.LoginPageTest.loginTest(LoginPageTest.java:71)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:821)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.util.ArrayList.forEach(ArrayList.java:1257)
+at org.testng.TestRunner.privateRun(TestRunner.java:767)
+at org.testng.TestRunner.run(TestRunner.java:588)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1214)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1136)
+at org.testng.TestNG.runSuites(TestNG.java:1066)
+at org.testng.TestNG.run(TestNG.java:1034)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+            <line>
+              <![CDATA[<a href='/Users/bobit/Documents/workspace/TestNGPOM/target/surefire-reports/failure_screenshots/loginTest_20_07_2020_11_43_10.png'> <img src='/Users/bobit/Documents/workspace/TestNGPOM/target/surefire-reports/failure_screenshots/loginTest_20_07_2020_11_43_10.png' height='100' width='100'/> </a>]]>
+            </line>
+          </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@3d36e4cd]" name="tearDown" is-config="true" duration-ms="118" started-at="2020-07-16T00:57:17 EDT" finished-at="2020-07-16T00:57:17 EDT">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@a77614d]" name="tearDown" is-config="true" duration-ms="82" started-at="2020-07-20T23:43:10 EDT" finished-at="2020-07-20T23:43:10 EDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.qa.hubspot.tests.LoginPageTest -->
-      <class name="com.qa.hubspot.tests.HomePageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.HomePageTest@6a472554]" name="setUp" is-config="true" duration-ms="16650" started-at="2020-07-16T00:56:47 EDT" finished-at="2020-07-16T00:57:04 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyHomePageTitle()[pri:1, instance:com.qa.hubspot.tests.HomePageTest@6a472554]" name="verifyHomePageTitle" duration-ms="9" started-at="2020-07-16T00:57:15 EDT" finished-at="2020-07-16T00:57:15 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyHomePageTitle -->
-        <test-method status="PASS" signature="verifyHomePageHeaderTest()[pri:2, instance:com.qa.hubspot.tests.HomePageTest@6a472554]" name="verifyHomePageHeaderTest" duration-ms="629" started-at="2020-07-16T00:57:15 EDT" finished-at="2020-07-16T00:57:16 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyHomePageHeaderTest -->
-        <test-method status="PASS" signature="verifyLoggedInUserTest()[pri:3, instance:com.qa.hubspot.tests.HomePageTest@6a472554]" name="verifyLoggedInUserTest" duration-ms="627" started-at="2020-07-16T00:57:16 EDT" finished-at="2020-07-16T00:57:17 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoggedInUserTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.HomePageTest@6a472554]" name="tearDown" is-config="true" duration-ms="105" started-at="2020-07-16T00:57:17 EDT" finished-at="2020-07-16T00:57:17 EDT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.qa.hubspot.tests.HomePageTest -->
     </test> <!-- HubSpot Functional Regression Test -->
   </suite> <!-- HubSpot Regression Test Suite -->
 </testng-results>
